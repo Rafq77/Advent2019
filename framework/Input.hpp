@@ -35,7 +35,7 @@ public:
     {
         if (fileExists())
         {
-            std::ifstream ifstream(fileName); 
+            // std::ifstream ifstream(fileName);  TODO
             // std::read(std::cin, ifstream); // smth like that
         }
         else 

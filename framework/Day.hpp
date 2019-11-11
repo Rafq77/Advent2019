@@ -31,8 +31,7 @@ public:
     {
         if (input.isValid())
         {
-            input.read() // might throw exception?
-
+            input.read(); // might throw exception?
         }
 
         if (false == wasSolved)
