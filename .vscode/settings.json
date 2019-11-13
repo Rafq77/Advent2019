@@ -1,2 +1,4 @@
 {
+    "cmakeExplorer.buildConfig": "Debug",
+    "cmakeExplorer.buildDir": "build"
 }
