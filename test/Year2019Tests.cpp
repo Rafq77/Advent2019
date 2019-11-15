@@ -5,6 +5,8 @@
 #include <cstdint>
 #include <string_view>
 
+//#include <range/v3/all.hpp>
+
 using namespace std::string_view_literals;
 
 TEST(Year2019, Day01_Test) 
@@ -18,6 +20,15 @@ TEST(Year2019, Day01_Test)
     //EXPECT_EQ(false, ff()) << " but value " << gValue2;
 }
 
+TEST(Year2019, RangesTest)
+{
+        
+    std::string text = "Hello|World|Ranges";
+    //auto splitText = text | view::split(' ');
+
+    //EXPECT_EQ(numberOfCharsInFile ,tmp.size());
+    //EXPECT_STREQ(std::string(firstTenChars).c_str(), tmp.substr(0, 10).c_str());
+}
 TEST(Year2019, FileIO)
 {
     std::fstream stream;
