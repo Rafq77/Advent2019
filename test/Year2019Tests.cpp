@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <string_view>
 
-//#include <range/v3/all.hpp>
+#include <range/v3/all.hpp>
 
 using namespace std::string_view_literals;
 
@@ -24,10 +24,13 @@ TEST(Year2019, RangesTest)
 {
         
     std::string text = "Hello|World|Ranges";
-    //auto splitText = text | view::split(' ');
+    auto splitText = text | ranges::view::split('|')
+                            | ranges::view::transform([](auto &&rng) {
+                            return std::string_view(&*rng.begin(), ranges::distance(rng));
+                    });
 
-    //EXPECT_EQ(numberOfCharsInFile ,tmp.size());
-    //EXPECT_STREQ(std::string(firstTenChars).c_str(), tmp.substr(0, 10).c_str());
+    EXPECT_EQ("Hello"sv, ranges::front(splitText));
+    EXPECT_NE("World"sv, ranges::front(splitText));
 }
 TEST(Year2019, FileIO)
 {
