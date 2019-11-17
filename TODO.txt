@@ -1,7 +1,0 @@
-
-* gitmodules - add ranges-v3
-* add local project gitconfig for username & address
-* Check VisualStudio Code version etc. @work 1.4 user 
-* Check VS Tools Version @work (2019.16.3.9)
-* Read from file two way: #1) inputStream_iterator #2) ranges
-* CMake extension for unit tests overview?
