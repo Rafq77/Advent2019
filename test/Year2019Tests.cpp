@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "../days/2019/Day01.hpp"
+#include "../framework/Input.hpp"
 
 #include <fstream>
 #include <cstdint>
@@ -11,13 +12,12 @@ using namespace std::string_view_literals;
 
 TEST(Year2019, Day01_Test) 
 {
-    year2019::Day01 day;
-    //day(Input::fromRaw("(())()")); // return this
+    const uint16_t expectedFloor = 138;
+    const uint16_t expectedFloorWithBasement = 1771;
+    year2019::Day01 daySolver(Input::fromFile("../../days/2019/input/day01.txt"));
 
-    EXPECT_EQ("137", day.getResultOfPart1());
-    //EXPECT_EQ(1771, day.getResultOfPart2());
-
-    //EXPECT_EQ(false, ff()) << " but value " << gValue2;
+    EXPECT_EQ(std::to_string(expectedFloor), daySolver.getResultOfPart1());
+    //EXPECT_EQ(expectedFloorWithBasement, daySolver.solve_part2());
 }
 
 TEST(Year2019, RangesTest)
@@ -56,6 +56,30 @@ TEST(Year2019, FileReadInputFromRelativePath)
     EXPECT_STREQ(std::string(firstTenChars).c_str(), tmp.substr(0, 10).c_str());
 }
 
+TEST(Year2019, HowTestShouldLookLike)
+{
+    const uint16_t expectedFloor = 0;
+    year2019::Day01 daySolver(Input::fromString("(())"));
+
+
+    EXPECT_EQ(std::to_string(expectedFloor), daySolver.getResultOfPart1());
+}
+
+/* 
+TEST(Year2019, HowTestShouldLookLike)
+{
+
+}
+
+TEST(Year2019, Part2Warmup)
+{
+    const uint16_t enteredBasementAtPosition = 1;
+    year2019::Day01 daySolver(Input::fromString(")"));
+
+    EXPECT_EQ(enteredBasementAtPosition , daySolver.solve_part2());
+}
+
+*/
 
 /*
 or example:

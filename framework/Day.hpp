@@ -9,6 +9,7 @@
 
 class Day
 {
+    protected:
     enum class SolvedStatus
     {
         NotSolved,
@@ -29,9 +30,9 @@ public:
 
     std::string getResultOfPart1() 
     {
-        if (input.isValid())
+        if (false == input.isValidInputLoaded())
         {
-            input.read(); // might throw exception?
+            throw std::runtime_error("No valid input could be loaded!");
         }
 
         if (false == wasSolved)
@@ -47,6 +48,12 @@ public:
             solvePart2();
         }
         return part2Solution;
+    }
+
+    Day(Input _input)
+    : input(_input)
+    {
+
     }
 
     Day() // TODO disable this
