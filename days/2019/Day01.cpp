@@ -14,6 +14,9 @@ Day01::Day01()
 
 void Day01::solvePart1() 
 {
+    zeroFloorCrossing.clear();
+    uint16_t instructionIndex = 1;
+    static const int16_t basementFloor = -1;
     for (const auto & c : input)
     {
         if ( c == "("sv)
@@ -24,7 +27,15 @@ void Day01::solvePart1()
         {
             --currentFloor;
         }
+
+        if (currentFloor == basementFloor)
+        {
+            zeroFloorCrossing.push_back(std::to_string(instructionIndex));
+        }
+
+        ++instructionIndex;
     }
+
 
     status = SolvedStatus::SolvedPart1;
     part1Solution = std::to_string(currentFloor);
@@ -32,7 +43,8 @@ void Day01::solvePart1()
 
 void Day01::solvePart2() 
 {
-
+    part2Solution = zeroFloorCrossing.front();
+    status = SolvedStatus::SolvedBoth;
 }
 
 }

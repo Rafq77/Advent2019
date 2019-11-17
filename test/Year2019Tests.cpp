@@ -17,7 +17,7 @@ TEST(Year2019, Day01_Test)
     year2019::Day01 daySolver(Input::fromFile("../../days/2019/input/day01.txt"));
 
     EXPECT_EQ(std::to_string(expectedFloor), daySolver.getResultOfPart1());
-    //EXPECT_EQ(expectedFloorWithBasement, daySolver.solve_part2());
+    EXPECT_EQ(std::to_string(expectedFloorWithBasement), daySolver.getResultOfPart2());
 }
 
 TEST(Year2019, RangesTest)
@@ -66,11 +66,6 @@ TEST(Year2019, HowTestShouldLookLike)
 }
 
 /* 
-TEST(Year2019, HowTestShouldLookLike)
-{
-
-}
-
 TEST(Year2019, Part2Warmup)
 {
     const uint16_t enteredBasementAtPosition = 1;
@@ -78,12 +73,10 @@ TEST(Year2019, Part2Warmup)
 
     EXPECT_EQ(enteredBasementAtPosition , daySolver.solve_part2());
 }
-
 */
 
 /*
 or example:
-
 (()) and ()() both result in floor 0.
 ((( and (()(()( both result in floor 3.
 ))((((( also results in floor 3.

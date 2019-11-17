@@ -15,6 +15,7 @@ namespace year2019 {
 
         const int16_t startingFloor = 0;
         int16_t currentFloor = startingFloor;
+        std::vector<std::string> zeroFloorCrossing;
     public:
         Day01();
     };
