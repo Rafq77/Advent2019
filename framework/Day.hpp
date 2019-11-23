@@ -62,7 +62,7 @@ public:
     }
 
     Day(std::string fileName) 
-    : input(fileName)
+    : input(Input::fromFile(fileName))
     {
 
     } 
