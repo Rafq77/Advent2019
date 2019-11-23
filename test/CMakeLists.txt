@@ -3,7 +3,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.15)
 SET(This AdventOfCodeTest)
 
 SET(Sources
-    Year2019Tests.cpp
+    Year2015Tests.cpp
 )
 
 add_executable(${This} ${Sources})

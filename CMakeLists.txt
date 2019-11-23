@@ -22,7 +22,7 @@ set(Headers
 )
 
 set(Sources
-    days/2019/Day01.cpp
+    days/2015/Day01.cpp
     framework/Input.cpp
 )
 
