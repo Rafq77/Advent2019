@@ -20,51 +20,6 @@ TEST(Year2015, Day01_Test)
     EXPECT_EQ(std::to_string(expectedFloorWithBasement), daySolver.getResultOfPart2());
 }
 
-TEST(Year2015, RangesTest)
-{
-        
-    std::string text = "Hello|World|Ranges";
-    auto splitText = text | ranges::view::split('|')
-                            | ranges::view::transform([](auto &&rng) {
-                            return std::string_view(&*rng.begin(), ranges::distance(rng));
-                    });
-
-    EXPECT_EQ("Hello"sv, ranges::front(splitText));
-    EXPECT_NE("World"sv, ranges::front(splitText));
-}
-TEST(Year2015, FileIO)
-{
-    std::fstream stream;
-    stream.open("./ttt.txt", std::fstream::out);
-    stream << "Hello File\n";
-    stream.close();
-}
-
-TEST(Year2015, FileReadInputFromRelativePath)
-{
-    std::ifstream stream;
-    std::string filePath("../../days/2015/input/day01.txt"sv);
-    stream.open(filePath);
-    std::string tmp;
-    stream >> tmp;
-    stream.close();
-
-    const uint16_t numberOfCharsInFile = 7000;
-    const std::string_view firstTenChars = "()(((()))("sv;
-
-    EXPECT_EQ(numberOfCharsInFile ,tmp.size());
-    EXPECT_STREQ(std::string(firstTenChars).c_str(), tmp.substr(0, 10).c_str());
-}
-
-TEST(Year2015, HowTestShouldLookLike)
-{
-    const uint16_t expectedFloor = 0;
-    year2015::Day01 daySolver(Input::fromString("(())"));
-
-
-    EXPECT_EQ(std::to_string(expectedFloor), daySolver.getResultOfPart1());
-}
-
 /* 
 TEST(Year2015, Part2Warmup)
 {
