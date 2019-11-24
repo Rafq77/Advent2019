@@ -18,10 +18,12 @@ include_directories("range-v3/include")
 
 set(Headers
     days/2015/Day01.hpp
+    days/2018/Day01.hpp
 )
 
 set(Sources
     days/2015/Day01.cpp
+    days/2018/Day01.cpp
 )
 
 set(FrameworkHeaders

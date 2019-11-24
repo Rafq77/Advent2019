@@ -15,6 +15,7 @@ class Input
 {
 public:
     Input();
+    Input(std::initializer_list<std::string> initializerList);
     virtual ~Input();
 
     static Input fromFile(std::string _fileName);

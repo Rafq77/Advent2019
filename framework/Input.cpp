@@ -4,6 +4,10 @@ using namespace std::string_view_literals;
 
 Input::Input() {}
 
+Input::Input(std::initializer_list<std::string> initializerList)
+: input(initializerList)
+{}
+
 Input::~Input() {}
 
 Input Input::fromFile(std::string _fileName)
