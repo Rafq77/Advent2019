@@ -24,8 +24,8 @@ class Day
     virtual void solvePart1() = 0;
     virtual void solvePart2() = 0;
     bool wasSolved = false;
-    T part1Solution = ""; //sv
-    T part2Solution = ""; //sv
+    T part1Solution;
+    T part2Solution; 
 
 public:
 

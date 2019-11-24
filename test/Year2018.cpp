@@ -12,21 +12,18 @@ using namespace std::string_view_literals;
 
 TEST(Year2018, Day01_Test) 
 {
-    std::string sumResult = "540";
-    std::string firstDoubleValue = "73056";
+    year2018::Day01<int32_t> daySolver(Input<int32_t>::fromFile("../../days/2018/input/day01.txt"));
 
-    year2018::Day01<std::string> daySolver(Input<std::string>::fromFile("../../days/2018/input/day01.txt"));
-
-    EXPECT_EQ(sumResult, daySolver.getResultOfPart1());
-    //EXPECT_EQ(firstDoubleValue, daySolver.getResultOfPart2());
+    EXPECT_EQ(540, daySolver.getResultOfPart1());
+    //EXPECT_EQ(73056, daySolver.getResultOfPart2());
 }
 
 TEST(Year2018, Day01_Part1_Examples)
 {
-    //EXPECT_EQ(3, year2018::Day01<uint32_t>({1, -2, +3, +1}).getResultOfPart1());
-    EXPECT_EQ("3", year2018::Day01<std::string>({"+1", "+1", "+1"}).getResultOfPart1());
-    EXPECT_EQ("0", year2018::Day01<std::string>({"+1", "+1", "-2"}).getResultOfPart1());
-    EXPECT_EQ("-6", year2018::Day01<std::string>({"-1", "-2", "-3"}).getResultOfPart1());
+    EXPECT_EQ(3, year2018::Day01<int32_t>(Input{1, -2, +3, +1}).getResultOfPart1());
+    EXPECT_EQ(3, year2018::Day01<int32_t>(Input{+1, +1, +1}).getResultOfPart1());
+    EXPECT_EQ(0, year2018::Day01<int32_t>(Input{+1, +1, -2}).getResultOfPart1());
+    EXPECT_EQ(-6, year2018::Day01<int32_t>(Input{-1, -2, -3}).getResultOfPart1());
 }
 
 TEST(Year2018, Day01_Part2_Examples)
