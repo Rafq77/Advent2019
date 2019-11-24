@@ -43,6 +43,11 @@ public:
     }
     std::string getResultOfPart2()
     {
+        if (status == SolvedStatus::NotSolved)
+        {
+            solvePart1();
+        }
+
         if (false == wasSolved)
         {
             solvePart2();
