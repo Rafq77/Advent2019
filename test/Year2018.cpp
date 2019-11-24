@@ -48,3 +48,13 @@ Current frequency  3, change of +1; resulting frequency  4.
 Current frequency  4, change of -2; resulting frequency  2, which has already been seen.
 */
 }
+
+TEST(Year2018, InputStreamToIntFromFile)
+{
+    std::string fileName{"../../days/2018/input/day01.txt"};
+    std::ifstream infile(fileName);
+    auto tmpInput = std::vector<int32_t>(std::istream_iterator<int32_t>(infile),{});
+
+    EXPECT_EQ(-19, tmpInput.front());
+    EXPECT_EQ(-73375, tmpInput.back());
+}
