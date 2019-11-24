@@ -6,13 +6,15 @@ using namespace std::string_view_literals;
 
 namespace year2015 {
 
-Day01::Day01() 
+template <class T>
+Day01<T>::Day01() 
 {
     // read from file
     //Day("day_01.txt");
 }
 
-void Day01::solvePart1() 
+template <class T>
+void Day01<T>::solvePart1() 
 {
     zeroFloorCrossing.clear();
     uint16_t instructionIndex = 1;
@@ -41,10 +43,13 @@ void Day01::solvePart1()
     part1Solution = std::to_string(currentFloor);
 }
 
-void Day01::solvePart2() 
+template <class T>
+void Day01<T>::solvePart2() 
 {
     part2Solution = zeroFloorCrossing.front();
     status = SolvedStatus::SolvedBoth;
 }
 
 }
+
+template class year2015::Day01<std::string>;

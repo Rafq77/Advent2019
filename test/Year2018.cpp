@@ -15,7 +15,7 @@ TEST(Year2018, Day01_Test)
     std::string sumResult = "540";
     std::string firstDoubleValue = "73056";
 
-    year2018::Day01 daySolver(Input::fromFile("../../days/2018/input/day01.txt"));
+    year2018::Day01<std::string> daySolver(Input<std::string>::fromFile("../../days/2018/input/day01.txt"));
 
     EXPECT_EQ(sumResult, daySolver.getResultOfPart1());
     //EXPECT_EQ(firstDoubleValue, daySolver.getResultOfPart2());
@@ -23,10 +23,10 @@ TEST(Year2018, Day01_Test)
 
 TEST(Year2018, Day01_Part1_Examples)
 {
-    EXPECT_EQ("3", year2018::Day01({"1", "-2", "+3", "+1"}).getResultOfPart1());
-    EXPECT_EQ("3", year2018::Day01({"+1", "+1", "+1"}).getResultOfPart1());
-    EXPECT_EQ("0", year2018::Day01({"+1", "+1", "-2"}).getResultOfPart1());
-    EXPECT_EQ("-6", year2018::Day01({"-1", "-2", "-3"}).getResultOfPart1());
+    EXPECT_EQ("3", year2018::Day01<std::string>({"1", "-2", "+3", "+1"}).getResultOfPart1());
+    EXPECT_EQ("3", year2018::Day01<std::string>({"+1", "+1", "+1"}).getResultOfPart1());
+    EXPECT_EQ("0", year2018::Day01<std::string>({"+1", "+1", "-2"}).getResultOfPart1());
+    EXPECT_EQ("-6", year2018::Day01<std::string>({"-1", "-2", "-3"}).getResultOfPart1());
 }
 
 TEST(Year2018, Day01_Part2_Examples)

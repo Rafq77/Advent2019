@@ -3,7 +3,9 @@
 #include <string_view>
 
 namespace year2015 {
-    class Day01 : public Day
+
+    template <class T>
+    class Day01 : public Day<T>
     {
         using Day::Day;
 

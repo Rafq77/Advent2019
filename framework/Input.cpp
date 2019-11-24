@@ -2,23 +2,27 @@
 
 using namespace std::string_view_literals;
 
-Input::Input() {}
+template <class T>
+Input<T>::Input() {}
 
-Input::Input(std::initializer_list<std::string> initializerList)
+template <class T>
+Input<T>::Input(std::initializer_list<T> initializerList)
 : input(initializerList)
 {}
 
-Input::~Input() {}
+template <class T>
+Input<T>::~Input() {}
 
-Input Input::fromFile(std::string _fileName)
+template <class T>
+Input<T> Input<T>::fromFile(std::string _fileName)
 {
     Input instance;
     instance.fileName = _fileName;
     instance.read();
     return std::move(instance);
 }
-
-Input Input::fromString(std::string rawInput)
+template <class T>
+Input<T> Input<T>::fromRaw(T rawInput)
 {
     Input instance;
     for (const char & character : rawInput)
@@ -28,23 +32,26 @@ Input Input::fromString(std::string rawInput)
     return std::move(instance);
 }
 
-bool Input::isValidInputLoaded()
+template <class T>
+bool Input<T>::isValidInputLoaded()
 {
     return (input.size() > 0);
 }
 
-bool Input::fileExists()
+template <class T>
+bool Input<T>::fileExists()
 {
     return std::filesystem::exists(fileName);
 }
 
-void Input::read()
+template <class T>
+void Input<T>::read()
 {
     if (fileExists())
     {
         input.clear();
         std::ifstream infile(fileName);
-        auto tmpInput = std::vector<std::string>(std::istream_iterator<std::string>(infile),{});
+        auto tmpInput = std::vector<T>(std::istream_iterator<T>(infile),{});
 
         if (tmpInput.size() == 1)
         {
@@ -79,12 +86,16 @@ void Input::read()
     }
 }
 
-std::vector<std::string>::iterator Input::begin()
+template <class T>
+typename std::vector<T>::iterator Input<T>::begin()
 {
     return input.begin();
 }
 
-std::vector<std::string>::iterator Input::end()
+template <class T>
+typename std::vector<T>::iterator Input<T>::end()
 {
     return input.end();
 }
+
+template class Input<std::string>;

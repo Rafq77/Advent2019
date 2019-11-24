@@ -7,6 +7,7 @@
 
 #include "Input.hpp"
 
+template <class T>
 class Day
 {
     protected:
@@ -19,16 +20,16 @@ class Day
     };
 
     SolvedStatus status = SolvedStatus::NotSolved;
-    Input input;
+    Input<T> input;
     virtual void solvePart1() = 0;
     virtual void solvePart2() = 0;
     bool wasSolved = false;
-    std::string part1Solution = ""; //sv
-    std::string part2Solution = ""; //sv
+    T part1Solution = ""; //sv
+    T part2Solution = ""; //sv
 
 public:
 
-    std::string getResultOfPart1() 
+    T getResultOfPart1() 
     {
         if (false == input.isValidInputLoaded())
         {
@@ -41,7 +42,7 @@ public:
         }
         return part1Solution;
     }
-    std::string getResultOfPart2()
+    T getResultOfPart2()
     {
         if (status == SolvedStatus::NotSolved)
         {
@@ -55,7 +56,7 @@ public:
         return part2Solution;
     }
 
-    Day(Input _input)
+    Day(Input<T> _input)
     : input(_input)
     {
 
@@ -67,7 +68,7 @@ public:
     }
 
     Day(std::string fileName) 
-    : input(Input::fromFile(fileName))
+    : input(Input<T>::fromFile(fileName))
     {
 
     } 

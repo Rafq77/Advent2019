@@ -50,7 +50,7 @@ TEST(Framework, FileReadInputFromRelativePath)
 TEST(Framework, HowTestShouldLookLike)
 {
     const uint16_t expectedFloor = 0;
-    year2015::Day01 daySolver(Input::fromString("(())"));
+    year2015::Day01<std::string> daySolver(Input<std::string>::fromRaw("(())"));
 
 
     EXPECT_EQ(std::to_string(expectedFloor), daySolver.getResultOfPart1());

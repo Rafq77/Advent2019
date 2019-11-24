@@ -10,23 +10,23 @@
 #include <filesystem> 
 
 // this class should read out from file and parse the input to an array of subsequent inputs.
-//template <class T>
+template <class T>
 class Input
 {
 public:
     Input();
-    Input(std::initializer_list<std::string> initializerList);
+    Input(std::initializer_list<T> initializerList);
     virtual ~Input();
 
     static Input fromFile(std::string _fileName);
-    static Input fromString(std::string rawInput);
+    static Input fromRaw(T rawInput);
     bool isValidInputLoaded();
     bool fileExists();
     void read();
-    std::vector<std::string>::iterator begin();
-    std::vector<std::string>::iterator end();
+    typename std::vector<T>::iterator begin();
+    typename std::vector<T>::iterator end();
     
 private:
-    std::vector<std::string> input; //TODO  template
+    std::vector<T> input;
     std::string fileName = "";
 };
