@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <numeric>
+#include <set>
 
 namespace year2018 {
 
@@ -19,6 +20,7 @@ void Day01::solvePart1()
 
 void Day01::solvePart2() 
 {
+    // std::set while double entry not applied
 
 }
 

@@ -52,6 +52,9 @@ void Input::read()
             {
                 input.push_back({c});
             }
+        } else 
+        {
+            input = tmpInput;
         }
 
         /*

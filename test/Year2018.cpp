@@ -12,15 +12,13 @@ using namespace std::string_view_literals;
 
 TEST(Year2018, Day01_Test) 
 {
-    /*
-    Sum: 540 answer
-    First number seen twice: "73056"
-    year2018::Day01 daySolver(Input::fromFile("../../days/2015/input/day01.txt"));
+    std::string sumResult = "540";
+    std::string firstDoubleValue = "73056";
 
-    EXPECT_EQ(std::to_string(expectedFloor), daySolver.getResultOfPart1());
-    EXPECT_EQ(std::to_string(expectedFloorWithBasement), daySolver.getResultOfPart2());
-    */
-    EXPECT_EQ(1,1);
+    year2018::Day01 daySolver(Input::fromFile("../../days/2018/input/day01.txt"));
+
+    EXPECT_EQ(sumResult, daySolver.getResultOfPart1());
+    //EXPECT_EQ(firstDoubleValue, daySolver.getResultOfPart2());
 }
 
 TEST(Year2018, Day01_Part1_Examples)
