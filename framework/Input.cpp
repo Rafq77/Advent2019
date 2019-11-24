@@ -19,6 +19,12 @@ Input<T>::Input(T string)
     }
 }
 
+template <>
+Input<int32_t>::Input(int32_t string)
+{
+    // be harmless
+}
+
 template <class T>
 Input<T>::~Input() {}
 
@@ -48,21 +54,7 @@ void Input<T>::read()
 {
     if (fileExists())
     {
-        input.clear();
-        std::ifstream infile(fileName);
-        auto tmpInput = std::vector<T>(std::istream_iterator<T>(infile),{});
-
-        if (tmpInput.size() == 1)
-        {
-            for (auto c : tmpInput.front())
-            {
-                input.push_back({c});
-            }
-        } else 
-        {
-            input = tmpInput;
-        }
-
+        input = readFromFile();
         /*
         auto input = std::ifstream("day16/input.txt", std::ios::in);
         for(std::string line; std::getline(input, line); )
@@ -86,6 +78,34 @@ void Input<T>::read()
 }
 
 template <class T>
+std::vector<T> Input<T>::readFromFile()
+{
+    std::vector<T> fileLines;
+
+    std::ifstream infile(fileName);
+    fileLines = std::vector<T>(std::istream_iterator<T>(infile), {});
+
+    if (fileLines.size() == 1)
+    {
+        std::vector<T> tmpVector;
+        // special case, need to separate by character!
+        for (auto c : fileLines.front())
+        {
+            tmpVector.push_back({c});
+        }
+        fileLines = tmpVector;
+    } 
+
+    return fileLines;
+}
+
+template <>
+std::vector<int32_t> Input<int32_t>::readFromFile()
+{
+    return std::vector<int32_t>(std::istream_iterator<int32_t>(std::ifstream{fileName}), {});
+}
+
+template <class T>
 typename std::vector<T>::iterator Input<T>::begin()
 {
     return input.begin();
@@ -98,3 +118,4 @@ typename std::vector<T>::iterator Input<T>::end()
 }
 
 template class Input<std::string>;
+template class Input<int32_t>;

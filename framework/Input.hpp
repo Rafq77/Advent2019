@@ -20,6 +20,7 @@ public:
     virtual ~Input();
 
     static Input fromFile(std::string _fileName);
+    std::vector<T> readFromFile();
     bool isValidInputLoaded();
     bool fileExists();
     void read();
