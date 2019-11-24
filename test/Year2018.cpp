@@ -23,7 +23,7 @@ TEST(Year2018, Day01_Test)
 
 TEST(Year2018, Day01_Part1_Examples)
 {
-    EXPECT_EQ("3", year2018::Day01<std::string>({"1", "-2", "+3", "+1"}).getResultOfPart1());
+    //EXPECT_EQ(3, year2018::Day01<uint32_t>({1, -2, +3, +1}).getResultOfPart1());
     EXPECT_EQ("3", year2018::Day01<std::string>({"+1", "+1", "+1"}).getResultOfPart1());
     EXPECT_EQ("0", year2018::Day01<std::string>({"+1", "+1", "-2"}).getResultOfPart1());
     EXPECT_EQ("-6", year2018::Day01<std::string>({"-1", "-2", "-3"}).getResultOfPart1());

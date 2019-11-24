@@ -11,6 +11,15 @@ Input<T>::Input(std::initializer_list<T> initializerList)
 {}
 
 template <class T>
+Input<T>::Input(T string)
+{
+    for (typename T::value_type item : string)
+    {
+        input.push_back({item});
+    }
+}
+
+template <class T>
 Input<T>::~Input() {}
 
 template <class T>
@@ -19,16 +28,6 @@ Input<T> Input<T>::fromFile(std::string _fileName)
     Input instance;
     instance.fileName = _fileName;
     instance.read();
-    return std::move(instance);
-}
-template <class T>
-Input<T> Input<T>::fromRaw(T rawInput)
-{
-    Input instance;
-    for (const char & character : rawInput)
-    {
-        instance.input.push_back({character});
-    }
     return std::move(instance);
 }
 

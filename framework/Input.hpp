@@ -16,10 +16,10 @@ class Input
 public:
     Input();
     Input(std::initializer_list<T> initializerList);
+    Input(T string);
     virtual ~Input();
 
     static Input fromFile(std::string _fileName);
-    static Input fromRaw(T rawInput);
     bool isValidInputLoaded();
     bool fileExists();
     void read();

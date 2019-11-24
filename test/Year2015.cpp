@@ -22,21 +22,21 @@ TEST(Year2015, Day01_Test)
 
 TEST(Year2015, Day01_Part1_Examples)
 {
-    EXPECT_EQ("0", year2015::Day01<std::string>(Input<std::string>::fromRaw("(())")).getResultOfPart1());
-    EXPECT_EQ("0", year2015::Day01<std::string>(Input<std::string>::fromRaw("()()")).getResultOfPart1());
-    EXPECT_EQ("3", year2015::Day01<std::string>(Input<std::string>::fromRaw("(((")).getResultOfPart1());
-    EXPECT_EQ("3", year2015::Day01<std::string>(Input<std::string>::fromRaw("(()(()(")).getResultOfPart1());
-    EXPECT_EQ("3", year2015::Day01<std::string>(Input<std::string>::fromRaw("))(((((")).getResultOfPart1());
+    EXPECT_EQ("0", year2015::Day01<std::string>(Input<std::string>("(())")).getResultOfPart1());
+    EXPECT_EQ("0", year2015::Day01<std::string>(Input<std::string>("()()")).getResultOfPart1());
+    EXPECT_EQ("3", year2015::Day01<std::string>(Input<std::string>("(((")).getResultOfPart1());
+    EXPECT_EQ("3", year2015::Day01<std::string>(Input<std::string>("(()(()(")).getResultOfPart1());
+    EXPECT_EQ("3", year2015::Day01<std::string>(Input<std::string>("))(((((")).getResultOfPart1());
 
-    EXPECT_EQ("-1", year2015::Day01<std::string>(Input<std::string>::fromRaw("())")).getResultOfPart1());
-    EXPECT_EQ("-1", year2015::Day01<std::string>(Input<std::string>::fromRaw("))(")).getResultOfPart1());
+    EXPECT_EQ("-1", year2015::Day01<std::string>(Input<std::string>("())")).getResultOfPart1());
+    EXPECT_EQ("-1", year2015::Day01<std::string>(Input<std::string>("))(")).getResultOfPart1());
 
-    EXPECT_EQ("-3", year2015::Day01<std::string>(Input<std::string>::fromRaw(")))")).getResultOfPart1());
-    EXPECT_EQ("-3", year2015::Day01<std::string>(Input<std::string>::fromRaw(")())())")).getResultOfPart1());
+    EXPECT_EQ("-3", year2015::Day01<std::string>(Input<std::string>(")))")).getResultOfPart1());
+    EXPECT_EQ("-3", year2015::Day01<std::string>(Input<std::string>(")())())")).getResultOfPart1());
 }
 
 TEST(Year2015, Day01_Part2_Examples)
 {
-    EXPECT_EQ("1", year2015::Day01<std::string>(Input<std::string>::fromRaw(")")).getResultOfPart2());
-    EXPECT_EQ("5", year2015::Day01<std::string>(Input<std::string>::fromRaw("()())")).getResultOfPart2());
+    EXPECT_EQ("1", year2015::Day01<std::string>(Input<std::string>(")")).getResultOfPart2());
+    EXPECT_EQ("5", year2015::Day01<std::string>(Input<std::string>("()())")).getResultOfPart2());
 }
