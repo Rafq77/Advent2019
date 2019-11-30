@@ -16,20 +16,19 @@ add_subdirectory(googletest)
 add_subdirectory(range-v3)
 include_directories("range-v3/include")
 
-set(Headers
-    days/2015/Day01.hpp
-    days/2018/Day01.hpp
+file(GLOB Headers
+    days/*/*.cpp
 )
 
-set(Sources
-    days/2015/Day01.cpp
-    days/2018/Day01.cpp
+file (GLOB Sources
+    days/*/*.cpp
 )
 
 set(FrameworkHeaders
     framework/Day.hpp
     framework/Input.hpp
 )
+
 
 set(FrameworkSources
     framework/Input.cpp
