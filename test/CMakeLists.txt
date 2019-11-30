@@ -27,6 +27,7 @@ SET(aoc AdventOfCodeTests)
 SET(Sources
     Year2015.cpp
     Year2018.cpp
+    Year2019.cpp
 )
 
 add_executable(${aoc} ${Sources})
