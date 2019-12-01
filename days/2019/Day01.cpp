@@ -18,15 +18,13 @@ template <class T>
 void Day01<T>::solvePart1() 
 {
     // For a mass of X, divide by 3 and round down to get Y, then subtract 2 to get RESULT.
-    part1Solution = std::accumulate(input.begin(), input.end(), 0 , [](int32_t sum, int32_t x){ return sum + (x/3 - 2); } );
-
-    //ranges::accumulate(lengths, 0l) / 2;
+    part1Solution = ranges::accumulate(input, 0 , [](int32_t sum, int32_t x){ return sum + (x/3 - 2); } );
 }
 
 template <class T>
 void Day01<T>::solvePart2() 
 {
-    part2Solution = std::accumulate(input.begin(), input.end(), 0 , [](int32_t sum, int32_t x){ 
+    part2Solution = ranges::accumulate(input, 0 , [](int32_t sum, int32_t x){ 
         int32_t fuelReq = x;
         int32_t totalFuelReq = 0;
         while (fuelReq > 0)

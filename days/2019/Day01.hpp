@@ -9,14 +9,10 @@ namespace year2019 {
     {
         using Day::Day;
 
-        std::string_view fileName = "./input/day01.txt";
-
-        // TODO this is an interface, extract to Solver?
         virtual void solvePart1() override;
         virtual void solvePart2() override;
 
-        int32_t resultOfDay1 = 0;
-
+        std::string_view fileName = "./input/day01.txt";
     public:
         Day01();
     };
