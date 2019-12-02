@@ -10,24 +10,17 @@ Input<T>::Input(std::initializer_list<T> initializerList)
 : input(initializerList)
 {}
 
-template <class T>
-Input<T>::Input(T string)
+template <>
+Input<std::string>::Input(std::string string)
 {
-    for (typename T::value_type item : string)
+    for (auto item : string)
     {
         input.push_back({item});
     }
 }
 
-template <>
-Input<int64_t>::Input(int64_t string)
-{
-    // be harmless
-}
-
-
-template <>
-Input<int32_t>::Input(int32_t string)
+template <class T>
+Input<T>::Input(T string)
 {
     // be harmless
 }
@@ -84,17 +77,17 @@ void Input<T>::read()
     }
 }
 
-template <class T>
-std::vector<T> Input<T>::readFromFile()
+template <>
+std::vector<std::string> Input<std::string>::readFromFile()
 {
-    std::vector<T> fileLines;
+    std::vector<std::string> fileLines;
 
     std::ifstream infile(fileName);
-    fileLines = std::vector<T>(std::istream_iterator<T>(infile), {});
+    fileLines = std::vector<std::string>(std::istream_iterator<std::string>(infile), {});
 
     if (fileLines.size() == 1)
     {
-        std::vector<T> tmpVector;
+        std::vector<std::string> tmpVector;
         // special case, need to separate by character!
         for (auto c : fileLines.front())
         {
@@ -106,17 +99,12 @@ std::vector<T> Input<T>::readFromFile()
     return fileLines;
 }
 
-template <>
-std::vector<int32_t> Input<int32_t>::readFromFile()
+template <class T>
+std::vector<T> Input<T>::readFromFile()
 {
-    return std::vector<int32_t>(std::istream_iterator<int32_t>(std::ifstream{fileName}), {});
+    return std::vector<T>(std::istream_iterator<T>(std::ifstream{fileName}), {});
 }
 
-template <>
-std::vector<int64_t> Input<int64_t>::readFromFile()
-{
-    return std::vector<int64_t>(std::istream_iterator<int64_t>(std::ifstream{fileName}), {});
-}
 template <class T>
 typename std::vector<T>::iterator Input<T>::begin()
 {
