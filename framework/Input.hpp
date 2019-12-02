@@ -26,6 +26,9 @@ public:
     void read();
     typename std::vector<T>::iterator begin();
     typename std::vector<T>::iterator end();
+
+    const std::vector<T>& getRaw() const { return input; };
+
     
 private:
     std::vector<T> input;

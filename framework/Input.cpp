@@ -20,6 +20,13 @@ Input<T>::Input(T string)
 }
 
 template <>
+Input<int64_t>::Input(int64_t string)
+{
+    // be harmless
+}
+
+
+template <>
 Input<int32_t>::Input(int32_t string)
 {
     // be harmless
@@ -105,6 +112,11 @@ std::vector<int32_t> Input<int32_t>::readFromFile()
     return std::vector<int32_t>(std::istream_iterator<int32_t>(std::ifstream{fileName}), {});
 }
 
+template <>
+std::vector<int64_t> Input<int64_t>::readFromFile()
+{
+    return std::vector<int64_t>(std::istream_iterator<int64_t>(std::ifstream{fileName}), {});
+}
 template <class T>
 typename std::vector<T>::iterator Input<T>::begin()
 {
@@ -119,3 +131,4 @@ typename std::vector<T>::iterator Input<T>::end()
 
 template class Input<std::string>;
 template class Input<int32_t>;
+template class Input<int64_t>;
