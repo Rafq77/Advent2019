@@ -13,16 +13,12 @@ namespace year2019 {
         virtual void solvePart2() override;
 
         std::string_view fileName = "./input/day01.txt";
-
-// TODO override 
-//{
-//}
+        std::vector<int64_t> _instructions;
+        std::vector<int64_t> lastMemoryState;
 
         int calculate(std::vector<int64_t> inpInstructions)
         {
             auto instructions = inpInstructions;
-            instructions[1] = 12;
-            instructions[2] = 2;
 
             auto opCodeIdx = 0;
             auto opCodeIncrement = 4;
@@ -52,12 +48,21 @@ namespace year2019 {
 
                 opCodeIdx = opCodeIdx + 4;
             }
-            //part1Solution = instructions[0];
 
+            lastMemoryState = instructions;
             return instructions[0];
         }
 
     public:
-        Day02();
+
+        void override() 
+        {
+            _instructions[1] = 12;
+            _instructions[2] = 2;
+        }
+
+        void initializeInstructions() { _instructions = input.getRaw(); }
+        std::vector<int64_t> getMemory() { return lastMemoryState; }
+        Day02() {} ;
     };
 }

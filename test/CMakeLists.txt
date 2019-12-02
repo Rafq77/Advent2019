@@ -11,6 +11,7 @@ SET(FrameworkSources
 add_executable(${FrameworkTest} ${FrameworkSources})
 target_link_libraries(${FrameworkTest} PUBLIC
     gtest_main
+    gmock_main
     Framework
     AdventOfCode
 )
@@ -33,6 +34,7 @@ SET(Sources
 add_executable(${aoc} ${Sources})
 target_link_libraries(${aoc} PUBLIC
     gtest_main
+    gmock_main
     Framework
     AdventOfCode
 )

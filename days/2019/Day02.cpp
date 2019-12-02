@@ -9,15 +9,9 @@
 namespace year2019 {
 
 template <class T>
-Day02<T>::Day02() 
-{
-
-}
-
-template <class T>
 void Day02<T>::solvePart1() 
 {
-    calculate(input.getRaw());
+    calculate(_instructions);
 }
 
 template <class T>
