@@ -39,9 +39,14 @@ TEST(Year2019, Day02_Test)
 {
     year2019::Day02<int64_t> daySolver(Input<int64_t>::fromFile("../../days/2019/input/day02.txt"));
     daySolver.initializeInstructions();
-    daySolver.override();
+    daySolver.override(12, 2);
 
     EXPECT_EQ(9581917, daySolver.getResultOfPart1());
+    EXPECT_EQ(19690720, daySolver.getResultOfPart2());
+
+    auto pair = daySolver.getPart2Pair();
+    EXPECT_EQ(25, pair.first);
+    EXPECT_EQ(5, pair.second);
 }
 
 TEST(Year2019, Day02_Part1_Examples)
