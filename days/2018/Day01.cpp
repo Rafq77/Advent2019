@@ -7,12 +7,6 @@
 namespace year2018 {
 
 template <class T>
-Day01<T>::Day01() 
-{
-
-}
-
-template <class T>
 void Day01<T>::solvePart1() 
 {
     part1Solution = std::accumulate(input.begin(), input.end(), 0 );

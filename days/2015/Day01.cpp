@@ -7,13 +7,6 @@ using namespace std::string_view_literals;
 namespace year2015 {
 
 template <class T>
-Day01<T>::Day01() 
-{
-    // read from file
-    //Day("day_01.txt");
-}
-
-template <class T>
 void Day01<T>::solvePart1() 
 {
     zeroFloorCrossing.clear();

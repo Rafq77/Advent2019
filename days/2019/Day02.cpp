@@ -1,11 +1,5 @@
 #include "Day02.hpp"
 
-#include <algorithm>
-#include <numeric>
-#include <set>
-
-#include <range/v3/all.hpp>
-
 namespace year2019 {
 
 template <class T>
@@ -30,7 +24,7 @@ void Day02<T>::solvePart2()
             if (auto tmp = calculate(_instructions); tmp == key)
             {
                 part2Solution = tmp;
-                part2Pair = std::make_pair(i,j);
+                part2Pair = std::make_pair(i, j);
                 break;
             }
         }

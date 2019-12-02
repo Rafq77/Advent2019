@@ -1,7 +1,13 @@
 #pragma once
 #include "../../framework/Day.hpp"
+
 #include <string_view>
 #include <tuple>
+#include <algorithm>
+#include <numeric>
+#include <set>
+
+#include <range/v3/all.hpp>
 
 namespace year2019 {
 
@@ -31,7 +37,5 @@ namespace year2019 {
         void initializeInstructions() { _instructions = input.getRaw(); }
         std::vector<int64_t> getMemory() { return lastMemoryState; }
         std::pair<int64_t, int64_t> getPart2Pair() { return part2Pair; }
-
-        Day02() {};
     };
 }

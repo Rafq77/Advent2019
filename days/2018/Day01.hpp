@@ -16,8 +16,5 @@ namespace year2018 {
         virtual void solvePart2() override;
 
         int32_t resultOfDay1 = 0;
-
-    public:
-        Day01();
     };
 }

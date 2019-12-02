@@ -14,6 +14,5 @@ namespace year2019 {
 
         std::string_view fileName = "./input/day01.txt";
     public:
-        Day01();
     };
 }

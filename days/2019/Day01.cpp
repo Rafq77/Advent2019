@@ -9,12 +9,6 @@
 namespace year2019 {
 
 template <class T>
-Day01<T>::Day01() 
-{
-
-}
-
-template <class T>
 void Day01<T>::solvePart1() 
 {
     // For a mass of X, divide by 3 and round down to get Y, then subtract 2 to get RESULT.

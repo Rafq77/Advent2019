@@ -62,11 +62,6 @@ public:
 
     }
 
-    Day() // TODO disable this
-    {
-
-    }
-
     Day(std::string fileName) 
     : input(Input<T>::fromFile(fileName))
     {
