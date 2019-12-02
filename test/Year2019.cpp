@@ -2,6 +2,7 @@
 #include <gmock/gmock.h>
 #include "../days/2019/Day01.hpp"
 #include "../days/2019/Day02.hpp"
+#include "../days/2019/Day03.hpp"
 #include "../framework/Input.hpp"
 
 #include <fstream>
@@ -70,4 +71,27 @@ TEST(Year2019, Day02_Part1_Examples)
     daySolver.initializeInstructions();
     daySolver.getResultOfPart1();
     ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int64_t>({30,1,1,4,2,5,6,0,99})));
+}
+
+TEST(Year2019, Day03_Test) 
+{
+    year2019::Day03<int32_t> daySolver(Input<int32_t>::fromFile("../../days/2019/input/day03.txt"));
+
+    EXPECT_EQ(3159380, daySolver.getResultOfPart1());
+    EXPECT_EQ(4736213, daySolver.getResultOfPart2());
+}
+
+TEST(Year2019, Day03_Part1_Examples)
+{
+    EXPECT_EQ(2, year2019::Day03<int32_t>(Input{12}).getResultOfPart1());
+    EXPECT_EQ(2, year2019::Day03<int32_t>(Input{14}).getResultOfPart1());
+    EXPECT_EQ(654, year2019::Day03<int32_t>(Input{1969}).getResultOfPart1());
+    EXPECT_EQ(33583, year2019::Day03<int32_t>(Input{100756}).getResultOfPart1());
+}
+
+TEST(Year2019, Day03_Part2_Examples)
+{
+    EXPECT_EQ(2, year2019::Day03<int32_t>(Input{14}).getResultOfPart2());
+    EXPECT_EQ(966, year2019::Day03<int32_t>(Input{1969}).getResultOfPart2());
+    EXPECT_EQ(50346, year2019::Day03<int32_t>(Input{100756}).getResultOfPart2());
 }
