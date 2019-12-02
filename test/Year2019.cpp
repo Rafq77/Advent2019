@@ -51,10 +51,18 @@ TEST(Year2019, Day02_Part1_Examples)
     daySolver.getResultOfPart1();
     ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int64_t>({2,3,0,6,99})));
 
-        /*
-    EXPECT_EQ(2, year2019::Day02<int64_t>(Input<int64_t>{1,0,0,0,99}).getResultOfPart1()); //2,0,0,0,99
-    EXPECT_EQ(2, year2019::Day02<int64_t>(Input<int64_t>{2,3,0,3,99}).getResultOfPart1());  // 2,3,0,6,99
-    EXPECT_EQ(2, year2019::Day02<int64_t>(Input<int64_t>{2,4,4,5,99,0}).getResultOfPart1()); // 2,4,4,5,99,9801
-    EXPECT_EQ(30, year2019::Day02<int64_t>(Input<int64_t>{1,1,1,4,99,5,6,0,99}).getResultOfPart1()); // 30,1,1,4,2,5,6,0,99
-    */
+    daySolver = year2019::Day02<int64_t>(Input<int64_t>{1,0,0,0,99}); 
+    daySolver.initializeInstructions();
+    daySolver.getResultOfPart1();
+    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int64_t>({2,0,0,0,99})));
+
+    daySolver = year2019::Day02<int64_t>(Input<int64_t>{2,4,4,5,99,0}); 
+    daySolver.initializeInstructions();
+    daySolver.getResultOfPart1();
+    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int64_t>({2,4,4,5,99,9801})));
+
+    daySolver = year2019::Day02<int64_t>(Input<int64_t>{1,1,1,4,99,5,6,0,99}); 
+    daySolver.initializeInstructions();
+    daySolver.getResultOfPart1();
+    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int64_t>({30,1,1,4,2,5,6,0,99})));
 }

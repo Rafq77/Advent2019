@@ -11,7 +11,7 @@ namespace year2019 {
 template <class T>
 void Day02<T>::solvePart1() 
 {
-    calculate(_instructions);
+    part1Solution = calculate(_instructions);
 }
 
 template <class T>
@@ -22,5 +22,4 @@ void Day02<T>::solvePart2()
 
 }
 
-//template class year2019::Day02<int32_t>;
 template class year2019::Day02<int64_t>;
