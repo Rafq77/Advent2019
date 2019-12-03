@@ -3,6 +3,7 @@
 #include "../days/2019/Day01.hpp"
 #include "../days/2019/Day02.hpp"
 #include "../days/2019/Day03.hpp"
+#include "../days/2019/Day04.hpp"
 #include "../framework/Input.hpp"
 
 #include <fstream>
@@ -83,7 +84,19 @@ TEST(Year2019, Day03_Test)
     EXPECT_EQ("14358", daySolver.getCombinedWireDistance());
 }
 
-TEST(Year2019, Day03_Part1_Examples)
+TEST(Year2019, Day04_Test) 
+{
+    year2019::Day04<std::string> daySolver(Input<std::string>::fromFile("../../days/2019/input/day04.txt"));
+
+/*
+    daySolver.getResultOfPart1();
+    EXPECT_EQ("1519", daySolver.getManhattanDistance());
+    daySolver.getResultOfPart2();
+    EXPECT_EQ("14358", daySolver.getCombinedWireDistance());
+    */
+}
+
+TEST(Year2019, Day04_Part1_Examples)
 {
     /*
     EXPECT_EQ(2, year2019::Day03<int32_t>(Input{12}).getResultOfPart1());
@@ -93,7 +106,7 @@ TEST(Year2019, Day03_Part1_Examples)
     */
 }
 
-TEST(Year2019, Day03_Part2_Examples)
+TEST(Year2019, Day04_Part2_Examples)
 {
     /*
     EXPECT_EQ(2, year2019::Day03<int32_t>(Input{14}).getResultOfPart2());
