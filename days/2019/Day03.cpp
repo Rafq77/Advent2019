@@ -18,12 +18,14 @@ void Day03<T>::solvePart1()
 
     auto instr1 = wire1 | ranges::view::split(',');
     auto instr2 = wire2 | ranges::view::split(',');
-    std::vector<std::pair<int, int>> pathWire1;
-    std::vector<std::pair<int, int>> pathWire2;
+    std::vector<Point> pathWire1;
+    std::vector<Point> pathWire2;
 
     //std::pair<int,int> zero = std::make_pair(0,0);
-    std::pair<int,int> zero = {0,0};
-    std::pair<int,int> pos = zero;
+    Point zero = {0,0};
+    Point pos = zero;
+
+    int distanceSoFar = 1;
 
     for (auto i : instr1)
     {
@@ -50,15 +52,16 @@ void Day03<T>::solvePart1()
                 break;
                 // failure
             }
+
+            if (wire1Distance.find(pos) == wire1Distance.end())
+            {
+                wire1Distance[pos] = ++distanceSoFar;
+            }
             pathWire1.push_back(pos);
         }
-
-        //if (direction[0] == 'D')
-         //   std::cout << direction << distance << '\n';
-        // struct Point { int x, int y } or std::pair (special case tuple)// std::make_pair
-        //record path1, step by step (add coords to vector)
     }
 
+    distanceSoFar = 1;
     pos = zero;
     for (auto i : instr2)
     {
@@ -85,44 +88,40 @@ void Day03<T>::solvePart1()
                 break;
                 // failure
             }
+            if (wire2Distance.find(pos) == wire2Distance.end())
+            {
+                wire2Distance[pos] = ++distanceSoFar;
+            }
+
             pathWire2.push_back(pos);
         }
     }
 
-    std::vector<std::pair<int,int>> res;
-    for (const std::pair<int,int>& p1 : pathWire1)
-    {
-        for (const std::pair<int,int>& p2 : pathWire2)
-        {
-            if (p1.first == p2.first && p1.second == p2.second)
-            {
-                res.push_back(p1);
-            }
-        }
-    }
+    this->wire1Points = pathWire1;
+    this->wire2Points = pathWire2;
 
-    /*
+    std::sort(pathWire1.begin(), pathWire1.end());
+    std::sort(pathWire2.begin(), pathWire2.end());
     std::set_intersection(pathWire1.begin(), pathWire1.end(),
                         pathWire2.begin(), pathWire2.end(),
-                        std::back_inserter(res), [](std::pair<int,int> a, std::pair<int,int> b) 
-                        {
-                            return (a.first == b.first && a.second == b.second);
-                        });
-                        */
+                        std::back_inserter(results));
 
-    //cheat
-    auto p = res[0];
-    shortestDistance = std::abs(p.first) + std::abs(p.second);
+    auto p = results[0]; // sorted so first one is closest
+    shortestDistance = std::abs(p.first) + std::abs(p.second); 
+
+    status = SolvedStatus::SolvedPart1;
+
+    /*
     for (auto p : res)
     {
         //std::cout << p.first + p.second << '\n';
     }
-    
-
-// ranges::sort(pathWire1);
+    */
+    // std::vector<std::pair<int,int>> res2;
+  //auto cross = ranges::view::set_intersection(pathWire1, pathWire2, std::back_inserter(res2));// , [](const std::pair<int,int>& a, const std::pair<int,int>& b){return a.first < b.first;});
+ //ranges::sort(pathWire1);
  //ranges::sort(pathWire2);
    // auto cross = ranges::view::set_intersection(pathWire1, pathWire2, [](const std::pair<int,int>& a, const std::pair<int,int>& b){return a.first < b.first;});
-    
     // add coords to 2nd vector
     //auto instr1 = wire1 | ranges::v3::view::split(',')
     //| ranges::v3::view::slice(1, ranges::v3::end)
@@ -142,12 +141,22 @@ void Day03<T>::solvePart1()
 // ranges::sort(r1)
 // ranges::sort(r2)
 //ranges::view::set_intersection(r1, r2)
-
 }
 
 template <class T>
 void Day03<T>::solvePart2() 
 {
+    
+    //auto tmp = ranges::min_element(results, [&](auto p1, auto p2) // TODO this would be nice
+    auto tmp = std::min_element(results.begin(), results.end(), [&](auto p1, auto p2)
+    {
+        int a = wire1Distance[p1] + wire2Distance[p1];
+        int b = wire1Distance[p2] + wire2Distance[p2];
+
+        return a < b;
+    });
+
+    shortestCombinedDistance = wire1Distance[*tmp] + wire2Distance[*tmp];
 }
 
 }

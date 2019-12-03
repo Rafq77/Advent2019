@@ -78,8 +78,9 @@ TEST(Year2019, Day03_Test)
     year2019::Day03<std::string> daySolver(Input<std::string>::fromFile("../../days/2019/input/day03.txt"));
 
     daySolver.getResultOfPart1();
-    EXPECT_EQ("1519", daySolver.getDistance());
-    //EXPECT_EQ("14358", daySolver.getResultOfPart2());
+    EXPECT_EQ("1519", daySolver.getManhattanDistance());
+    daySolver.getResultOfPart2();
+    EXPECT_EQ("14358", daySolver.getCombinedWireDistance());
 }
 
 TEST(Year2019, Day03_Part1_Examples)
