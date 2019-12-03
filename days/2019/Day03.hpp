@@ -12,7 +12,10 @@ namespace year2019 {
         virtual void solvePart1() override;
         virtual void solvePart2() override;
 
+        int shortestDistance;
+
         std::string_view fileName = "./input/day03.txt";
     public:
+        std::string getDistance() { return std::to_string(shortestDistance); };
     };
 }

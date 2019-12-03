@@ -75,23 +75,28 @@ TEST(Year2019, Day02_Part1_Examples)
 
 TEST(Year2019, Day03_Test) 
 {
-    year2019::Day03<int32_t> daySolver(Input<int32_t>::fromFile("../../days/2019/input/day03.txt"));
+    year2019::Day03<std::string> daySolver(Input<std::string>::fromFile("../../days/2019/input/day03.txt"));
 
-    EXPECT_EQ(3159380, daySolver.getResultOfPart1());
-    EXPECT_EQ(4736213, daySolver.getResultOfPart2());
+    daySolver.getResultOfPart1();
+    EXPECT_EQ("1519", daySolver.getDistance());
+    //EXPECT_EQ("14358", daySolver.getResultOfPart2());
 }
 
 TEST(Year2019, Day03_Part1_Examples)
 {
+    /*
     EXPECT_EQ(2, year2019::Day03<int32_t>(Input{12}).getResultOfPart1());
     EXPECT_EQ(2, year2019::Day03<int32_t>(Input{14}).getResultOfPart1());
     EXPECT_EQ(654, year2019::Day03<int32_t>(Input{1969}).getResultOfPart1());
     EXPECT_EQ(33583, year2019::Day03<int32_t>(Input{100756}).getResultOfPart1());
+    */
 }
 
 TEST(Year2019, Day03_Part2_Examples)
 {
+    /*
     EXPECT_EQ(2, year2019::Day03<int32_t>(Input{14}).getResultOfPart2());
     EXPECT_EQ(966, year2019::Day03<int32_t>(Input{1969}).getResultOfPart2());
     EXPECT_EQ(50346, year2019::Day03<int32_t>(Input{100756}).getResultOfPart2());
+    */
 }
