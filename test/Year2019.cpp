@@ -86,31 +86,31 @@ TEST(Year2019, Day03_Test)
 
 TEST(Year2019, Day04_Test) 
 {
-    year2019::Day04<std::string> daySolver(Input<std::string>::fromFile("../../days/2019/input/day04.txt"));
+    year2019::Day04<int32_t> daySolver(Input{278384, 824795});
 
-/*
-    daySolver.getResultOfPart1();
-    EXPECT_EQ("1519", daySolver.getManhattanDistance());
-    daySolver.getResultOfPart2();
-    EXPECT_EQ("14358", daySolver.getCombinedWireDistance());
-    */
+    EXPECT_EQ(921, daySolver.getResultOfPart1());
+    EXPECT_EQ(603, daySolver.getResultOfPart2());
 }
 
 TEST(Year2019, Day04_Part1_Examples)
 {
-    /*
-    EXPECT_EQ(2, year2019::Day03<int32_t>(Input{12}).getResultOfPart1());
-    EXPECT_EQ(2, year2019::Day03<int32_t>(Input{14}).getResultOfPart1());
-    EXPECT_EQ(654, year2019::Day03<int32_t>(Input{1969}).getResultOfPart1());
-    EXPECT_EQ(33583, year2019::Day03<int32_t>(Input{100756}).getResultOfPart1());
-    */
+    year2019::Day04<int32_t> daySolver(Input{0});
+
+    EXPECT_TRUE(daySolver.isPasswordValid(111111));
+    EXPECT_FALSE(daySolver.isPasswordValid(223450));
+    EXPECT_FALSE(daySolver.isPasswordValid(123789));
+    EXPECT_TRUE(daySolver.isPasswordValid(122345));
+    EXPECT_TRUE(daySolver.isPasswordValid(111123));
+    EXPECT_FALSE(daySolver.isPasswordValid(135679));
 }
 
 TEST(Year2019, Day04_Part2_Examples)
 {
-    /*
-    EXPECT_EQ(2, year2019::Day03<int32_t>(Input{14}).getResultOfPart2());
-    EXPECT_EQ(966, year2019::Day03<int32_t>(Input{1969}).getResultOfPart2());
-    EXPECT_EQ(50346, year2019::Day03<int32_t>(Input{100756}).getResultOfPart2());
-    */
+    year2019::Day04<int32_t> daySolver(Input{0});
+
+    EXPECT_FALSE(daySolver.isPasswordValidExtraCondition(111243));
+    EXPECT_FALSE(daySolver.isPasswordValidExtraCondition(123444));
+    EXPECT_TRUE(daySolver.isPasswordValidExtraCondition(112233));
+    EXPECT_TRUE(daySolver.isPasswordValidExtraCondition(111233));
+    EXPECT_TRUE(daySolver.isPasswordValidExtraCondition(111122));
 }
