@@ -4,6 +4,7 @@
 #include "../days/2019/Day02.hpp"
 #include "../days/2019/Day03.hpp"
 #include "../days/2019/Day04.hpp"
+#include "../days/2019/Day05.hpp"
 #include "../framework/Input.hpp"
 
 #include <fstream>
@@ -114,3 +115,13 @@ TEST(Year2019, Day04_Part2_Examples)
     EXPECT_TRUE(daySolver.isPasswordValidExtraCondition(111233));
     EXPECT_TRUE(daySolver.isPasswordValidExtraCondition(111122));
 }
+
+TEST(Year2019, Day05_Test) 
+{
+    year2019::Day05<int32_t> daySolver("../../days/2019/input/day02.txt");
+    daySolver.isPasswordValid(1234567);
+
+    //EXPECT_EQ(921, daySolver.getResultOfPart1());
+    //EXPECT_EQ(603, daySolver.getResultOfPart2());
+}
+
