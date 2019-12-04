@@ -15,7 +15,6 @@ namespace year2019 {
         virtual void solvePart2() override;
 
         std::vector<int32_t> validNumbersOfPart1;
-
     public:
         bool isPasswordValid(int32_t value);
         bool isPasswordValidExtraCondition(int32_t value);

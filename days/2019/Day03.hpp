@@ -23,7 +23,6 @@ namespace year2019 {
         int shortestDistance;
         int shortestCombinedDistance; 
 
-        std::string_view fileName = "./input/day03.txt";
     public:
         std::string getManhattanDistance() { return std::to_string(shortestDistance); };
         std::string getCombinedWireDistance() { return std::to_string(shortestCombinedDistance); };
