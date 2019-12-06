@@ -19,13 +19,14 @@ namespace year2019 {
         virtual void solvePart1() override;
         virtual void solvePart2() override;
 
+    protected:
         std::string_view fileName = "./input/day01.txt";
-        std::vector<int64_t> _instructions;
-        std::vector<int64_t> backupInstructions;
-        std::vector<int64_t> lastMemoryState;
-        std::pair<int64_t,int64_t> part2Pair;
+        std::vector<int32_t> _instructions;
+        std::vector<int32_t> backupInstructions;
+        std::vector<int32_t> lastMemoryState;
+        std::pair<int32_t,int32_t> part2Pair;
 
-        int calculate(std::vector<int64_t> inpInstructions);
+        int calculate(std::vector<int32_t> inpInstructions);
 
     public:
 
@@ -35,7 +36,7 @@ namespace year2019 {
             _instructions[2] = y; 
         }
         void initializeInstructions() { _instructions = input.getRaw(); }
-        std::vector<int64_t> getMemory() { return lastMemoryState; }
-        std::pair<int64_t, int64_t> getPart2Pair() { return part2Pair; }
+        std::vector<int32_t> getMemory() { return lastMemoryState; }
+        std::pair<int32_t, int32_t> getPart2Pair() { return part2Pair; }
     };
 }

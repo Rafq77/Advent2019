@@ -11,7 +11,7 @@ void Day02<T>::solvePart1()
 template <class T>
 void Day02<T>::solvePart2() 
 {
-    int64_t key = 19690720;
+    int32_t key = 19690720;
 
     auto backupInstructions = input.getRaw();
 
@@ -31,7 +31,7 @@ void Day02<T>::solvePart2()
 }
 
 template <class T>
-int Day02<T>::calculate(std::vector<int64_t> inpInstructions)
+int Day02<T>::calculate(std::vector<int32_t> inpInstructions)
 {
     auto instructions = inpInstructions;
 
@@ -70,4 +70,4 @@ int Day02<T>::calculate(std::vector<int64_t> inpInstructions)
 
 }
 
-template class year2019::Day02<int64_t>;
+template class year2019::Day02<int32_t>;

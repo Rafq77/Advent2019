@@ -40,7 +40,7 @@ TEST(Year2019, Day01_Part2_Examples)
 
 TEST(Year2019, Day02_Test) 
 {
-    year2019::Day02<int64_t> daySolver(Input<int64_t>::fromFile("../../days/2019/input/day02.txt"));
+    year2019::Day02<int32_t> daySolver(Input<int32_t>::fromFile("../../days/2019/input/day02.txt"));
     daySolver.initializeInstructions();
     daySolver.override(12, 2);
 
@@ -54,25 +54,25 @@ TEST(Year2019, Day02_Test)
 
 TEST(Year2019, Day02_Part1_Examples)
 {
-    year2019::Day02<int64_t> daySolver(Input<int64_t>{2,3,0,3,99});
+    year2019::Day02<int32_t> daySolver(Input<int32_t>{2,3,0,3,99});
     daySolver.initializeInstructions();
     daySolver.getResultOfPart1();
-    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int64_t>({2,3,0,6,99})));
+    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int32_t>({2,3,0,6,99})));
 
-    daySolver = year2019::Day02<int64_t>(Input<int64_t>{1,0,0,0,99}); 
+    daySolver = year2019::Day02<int32_t>(Input<int32_t>{1,0,0,0,99}); 
     daySolver.initializeInstructions();
     daySolver.getResultOfPart1();
-    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int64_t>({2,0,0,0,99})));
+    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int32_t>({2,0,0,0,99})));
 
-    daySolver = year2019::Day02<int64_t>(Input<int64_t>{2,4,4,5,99,0}); 
+    daySolver = year2019::Day02<int32_t>(Input<int32_t>{2,4,4,5,99,0}); 
     daySolver.initializeInstructions();
     daySolver.getResultOfPart1();
-    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int64_t>({2,4,4,5,99,9801})));
+    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int32_t>({2,4,4,5,99,9801})));
 
-    daySolver = year2019::Day02<int64_t>(Input<int64_t>{1,1,1,4,99,5,6,0,99}); 
+    daySolver = year2019::Day02<int32_t>(Input<int32_t>{1,1,1,4,99,5,6,0,99}); 
     daySolver.initializeInstructions();
     daySolver.getResultOfPart1();
-    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int64_t>({30,1,1,4,2,5,6,0,99})));
+    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int32_t>({30,1,1,4,2,5,6,0,99})));
 }
 
 TEST(Year2019, Day03_Test) 
@@ -118,8 +118,30 @@ TEST(Year2019, Day04_Part2_Examples)
 
 TEST(Year2019, Day05_Test) 
 {
-    year2019::Day05<int32_t> daySolver("../../days/2019/input/day02.txt");
-    daySolver.isPasswordValid(1234567);
+    year2019::Day05<int32_t> daySolver(Input<int32_t>::fromFile("../../days/2019/input/day05.txt"));
+    daySolver.inputValue = 1;
+    //daySolver.initializeInstructions();
+
+
+    //EXPECT_EQ(12234644, daySolver.getResultOfPart1());
+
+/*
+
+tst1 = [ 3,12,6,12,15,1,13,14,13,4,13,99,-1,0,1,9 ] #1/0
+tst2 = [ 3,3,1105,-1,9,1101,0,0,12,4,12,99,1] #1/0
+# x <=8
+tst3 = [3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31,1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104,999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99 ] 
+tst4 = [3,9,8,9,10,9,4,9,99,-1,8] # x==8
+tst5 = [3,3,1108,-1,8,3,4,3,99] # x<8
+    daySolver = year2019::Day02<int32_t>(Input<int32_t>{1,1,1,4,99,5,6,0,99}); 
+    daySolver.initializeInstructions();
+    daySolver.getResultOfPart1();
+    ASSERT_THAT(daySolver.getMemory(), ::testing::ContainerEq(std::vector<int32_t>({30,1,1,4,2,5,6,0,99})));
+
+*/
+    //daySolver.initializeInstructions();
+    //year2019::Day05<int32_t> daySolver("../../days/2019/input/day02.txt");
+    //daySolver.isPasswordValid(1234567);
 
     //EXPECT_EQ(921, daySolver.getResultOfPart1());
     //EXPECT_EQ(603, daySolver.getResultOfPart2());
