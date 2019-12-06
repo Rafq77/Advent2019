@@ -5,6 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "range-v3/include",
+                "boost",
                 "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.23.28105/include"
             ],
             "defines": [

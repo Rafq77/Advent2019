@@ -8,6 +8,9 @@
 
 #include <range/v3/all.hpp>
 
+#include <boost/math/special_functions/sign.hpp>
+#include <boost/graph/adjacency_list.hpp>
+
 using namespace std::string_view_literals;
 
 TEST(Framework, RangesTest)
@@ -54,4 +57,16 @@ TEST(Framework, HowTestShouldLookLike)
 
 
     EXPECT_EQ(std::to_string(expectedFloor), daySolver.getResultOfPart1());
+}
+
+TEST(Framework, BoostTestGraph)
+{
+  boost::adjacency_list<> g;
+
+  boost::adjacency_list<>::vertex_descriptor v1 = boost::add_vertex(g);
+  boost::adjacency_list<>::vertex_descriptor v2 = boost::add_vertex(g);
+  boost::adjacency_list<>::vertex_descriptor v3 = boost::add_vertex(g);
+  boost::adjacency_list<>::vertex_descriptor v4 = boost::add_vertex(g);
+
+  EXPECT_TRUE(true);
 }

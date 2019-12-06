@@ -14,6 +14,7 @@ target_link_libraries(${FrameworkTest} PUBLIC
     gmock_main
     Framework
     AdventOfCode
+    ${Boost_LIBRARIES}
 )
 
 add_test(
