@@ -5,6 +5,7 @@
 #include "../days/2019/Day03.hpp"
 #include "../days/2019/Day04.hpp"
 #include "../days/2019/Day05.hpp"
+#include "../days/2019/Day06.hpp"
 #include "../framework/Input.hpp"
 
 #include <fstream>
@@ -147,3 +148,8 @@ tst5 = [3,3,1108,-1,8,3,4,3,99] # x<8
     //EXPECT_EQ(603, daySolver.getResultOfPart2());
 }
 
+
+TEST(Year2019, Day06_Test) 
+{
+    year2019::Day06<int32_t> daySolver(Input<int32_t>::fromFile("../../days/2019/input/day06.txt"));
+}
